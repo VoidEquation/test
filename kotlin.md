@@ -14,3 +14,15 @@
 ### mutable
 * 변경가능한 컬렉션 타입을 사용하려면 mutable~~ 로 시작하는 선언문을 사용해야 한다.
 * ex) mutableListOf<Long>, ListOf<Long>
+
+## enum / when
+### when 식의 인자로 아무 객체나 사용가능
+```kotlin
+fun mix(c1: Color, c2:Color) = 
+  when (setOf(c1, c2)) {
+    setOf(RED, YELLOW) -> ORANGE
+    setOf(YELLOW, BLUE) -> GREEN
+    setOf(BLUE, VIOLET) -> INDIGO
+    else -> throw Exception("Dirty color")
+ }
+```
