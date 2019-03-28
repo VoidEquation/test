@@ -26,3 +26,19 @@ fun mix(c1: Color, c2:Color) =
     else -> throw Exception("Dirty color")
  }
 ```
+
+### map
+* get과 put을 사용하는 대신 map[key]나 map[key] = value를 사용해 값을 가져오고 설정할 수 있다
+```kotlin
+binaryReps[c] = binary
+binaryReps.put(c, binary)
+```
+
+### list
+* 인덱스와 함께 컬렉션을 이터레이션 할 수 있음
+```kotlin
+var list = arrayListOf("10", "11", "1001")
+for ((index, element) in list.withIndex()) {
+  println("$index: $element")
+}
+```
