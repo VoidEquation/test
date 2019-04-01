@@ -42,3 +42,17 @@ for ((index, element) in list.withIndex()) {
   println("$index: $element")
 }
 ```
+
+### to
+* 코틀린에서 to라는 단어는 키워드가 아님
+* 이 코드는 중위 호출(infix call)이라는 특별한 방식으로 to라는 일반 메소드를 호출한 것
+* 중위 호출 시에는 수신 객체와 유일한 메소드 인자 사이에 메소드 이름을 넣음
+```kotlin
+// 동일
+to("one")
+to "one"
+```
+to 함수 정의
+```kotlin
+infix fun Any.to(other: Any) = Pair(this, other)
+```
