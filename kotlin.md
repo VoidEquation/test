@@ -56,3 +56,7 @@ to 함수 정의
 ```kotlin
 infix fun Any.to(other: Any) = Pair(this, other)
 ```
+
+### property
+* lateinit : 변경자를 null이 될 수 없는 프로퍼티에 지정하면 프로퍼티를 생성자가 호출된 다음에 초기화
+* lazy initialized(지연 초기화) : 요청이 들어오면 비로소 초기화 됨. 더 일반적인 위임 프로퍼티의 일종
