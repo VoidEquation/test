@@ -73,3 +73,14 @@ infix fun Any.to(other: Any) = Pair(this, other)
 ### apply 함수
 * with와 비슷하나 차이는 apply는 항상 자신에게 전달된 객체를 반환한다는 점임
 * apply는 확장 함수로 정의됨
+
+## 안전한 호출 연산자
+### ?.
+* s?.toUpperCase()는 if (s != null) s.toUpperCase() else null 과 같다.
+### ?:
+* val t: String = s ?: ""  ---> "s"가 null 이면 결과는 "" 이다.
+* foo ?: bar ---> foo != null 이면 foo, foo == null 이면 bar 이다.
+### as?
+* foo as? Type ---> foo is Type 이면 foo as Type, foo !is Type 이면 null
+### let 함수
+* foo?.let { ...it ... } ---> foo != null 이면 it은 람다 안에서 널이 아니다, foo == null 이면 아무일도 일어나지 않는다.
