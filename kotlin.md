@@ -84,3 +84,8 @@ infix fun Any.to(other: Any) = Pair(this, other)
 * foo as? Type ---> foo is Type 이면 foo as Type, foo !is Type 이면 null
 ### let 함수
 * foo?.let { ...it ... } ---> foo != null 이면 it은 람다 안에서 널이 아니다, foo == null 이면 아무일도 일어나지 않는다.
+
+## compareTo
+* 비교 연산자 (>, <, <=, >=)는 compareTo 호출로 컴파일된다.
+* compareTo가 반환하는 값은 Int다.
+* p1 < p2는 p1.compareTo(p2) < 0 과 같다.
