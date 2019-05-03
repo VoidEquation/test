@@ -89,3 +89,13 @@ infix fun Any.to(other: Any) = Pair(this, other)
 * 비교 연산자 (>, <, <=, >=)는 compareTo 호출로 컴파일된다.
 * compareTo가 반환하는 값은 Int다.
 * p1 < p2는 p1.compareTo(p2) < 0 과 같다.
+
+## 람다식의 로컬 return
+```kotlin
+fun lookForAlice(people: List<Person>) {
+  people.forEach label@{                  // 람다 식 앞에 레이블을 붙임
+    if (it.name == "Alice") return@label  // return@label은 앞에서 정의한 레이블을 참고
+  }
+  println("Alice might be somewhere")     // 항상 
+}
+```
